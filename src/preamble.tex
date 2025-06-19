@@ -6,19 +6,24 @@
 \usepackage{amsmath}
 \usepackage{parskip}
 \usepackage[numbers,sort&compress]{natbib}
-\usepackage[colorlinks=true, citecolor=cyan]{hyperref}
+\usepackage[colorlinks=true, citecolor=gray]{hyperref}
+% xcolor isn't a default, but if using with options like `dvipsnames',
+% this clashes with tikz' own import of xcolor.
+% So must import it here first.
+\usepackage[dvipsnames,table]{xcolor}
 \usepackage{tikz}
 \usepackage{lipsum}
 
 % Custom stuff
 % For inverse search with PDF viewer
 \usepackage{pdfsync}
-% For tikzit diagrams
-\usepackage{tikzit}
 % Various AMS packages
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{amssymb}
+% For tikzit - color package needed for tikzdefs.
+%\usepackage{color}
+\usepackage{tikzit}
 % For making 'example' environment non-italics.
 \usepackage{thmtools}
 % For blackboard font style '1'.
@@ -33,8 +38,6 @@
 \usepackage{scalerel}
 % For including object type in references.
 \usepackage[nameinlink]{cleveref}
-% cleveref by default calls a subsection a `section' - override this.
-\crefname{subsection}{subsection}{subsections}
 % For defining custom 'clevercite' commands in definitions.tex.
 \usepackage{xstring}
 % For defining commands with optional arguments.
@@ -42,12 +45,18 @@
 % For St Mary Road symbols, including double square bracket for quantum codes.
 \usepackage{stmaryrd}
 % For more complex subfigure stuff.
+\usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subcaption}
 % For strikethrough text via \sout.
 % Adding option 'normalem' stops package from overwriting the \emph command.
 \usepackage[normalem]{ulem}
 
 % Allow figures placed at the bottom of documents to take up more space.
-% The default is .3 (so figures must fit in the bottom 30% of the page) -
-% change it to .7 to match the \topfraction value.
-\renewcommand\bottomfraction{.7}
+% The default is .3 (so figures must fit in the bottom 30% of the page)
+\renewcommand\bottomfraction{.8}
+% If wanting even more space, can also change topfraction (max, default .7) and textfraction (min, default .3).
+\renewcommand\topfraction{.8}
+\renewcommand\textfraction{.2}
+
+% Set the depth of the table of contents
+\setcounter{tocdepth}{2}

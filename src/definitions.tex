@@ -7,19 +7,41 @@
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{plottwist}[theorem]{Plot-twist}
 \newtheorem{keyidea}[theorem]{Key idea}
+\newtheorem{keypoint}[theorem]{Key point}
 \newtheorem{spoiler}[theorem]{Spoiler alert}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}[theorem]{Question}
 \newtheorem{openquestion}[theorem]{Open question}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{difference}[theorem]{Difference}
+
+% If using Cref, it needs to know how to pluralise these non-standard theorem names.
+\crefname{keypoint}{key point}{key points}
+\Crefname{keypoint}{Key point}{Key points}
+\crefname{difference}{difference}{differences}
+\Crefname{difference}{Difference}{Differences}
 
 % Custom
 \declaretheoremstyle[qed={$\blacksquare$}]{exampleStyle}
 \declaretheorem[style=exampleStyle, sibling=theorem, name=Example]{example}
 \declaretheorem[style=exampleStyle, sibling=theorem, name=Example, numbered=no]{example*}
+% Define a new command for subsubsubsection
+\makeatletter
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand{\thesubsubsubsection}{\thesubsubsection.\arabic{subsubsubsection}}
+\newcommand{\subsubsubsection}[1]{%
+    \refstepcounter{subsubsubsection}%
+    \vskip 2ex \@plus 1ex \@minus .2ex% Reduced vertical space before
+        {\sffamily\normalsize% Sans-serif font family, normal size, no bold
+    \thesubsubsubsection \quad #1\par}% Put heading on its own line
+    \nobreak% Prevent page break after heading
+% \vskip 1ex \@plus .2ex% Reduced space after
+}
+\makeatother
 
 % REFERENCES
 % Define a `clever cite' command analogous to cleveref's functionality for references
@@ -44,8 +66,10 @@
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
 
+\newcommand{\DDD}{\mathcal{D}}
 \newcommand{\GGG}{\mathcal{G}}
 \newcommand{\HHH}{\mathcal{H}}
+\newcommand{\LLL}{\mathcal{L}}
 \newcommand{\MMM}{\mathcal{M}}
 \newcommand{\NNN}{\mathcal{N}}
 \newcommand{\PPP}{\mathcal{P}}
@@ -54,28 +78,46 @@
 
 \newcommand{\one}{\mathds{1}}
 
+% SYMBOLS
+\newcommand{\halfuparrow}{\scalebox{0.5}{\ensuremath{\uparrow}}}
+\newcommand{\halfrightarrow}{\scalebox{0.5}{\ensuremath{\rightarrow}}}
+
 % COMMENTS
-\newcommand{\teague}[1]{\textcolor{blue}{[Teague: #1]}}
-\newcommand{\Teague}[1]{\emph{[Alex: #1]}}
+\newcommand{\teague}[1]{\comment{blue}{Teague}{#1}}
 
 % MATHS
 \newcommand{\defeq}{\coloneqq}
 \newcommand{\after}{\circ}
-\newcommand{\bbar}[1]{\bar{\bar{#1}}}
-\newcommand{\tbar}[1]{\tilde{\bar{#1}}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceil}[1]{\lceil#1\rceil}
+\newcommand{\nonNegInts}{\ZZ_{\geq 0}}
+\newcommand{\positiveInts}{\ZZ_{>0}}
+\newcommand{\groupPres}[1]{\left\langle #1 \right\rangle}
 
 % QUANTUM
 \newcommand{\allIdentitiesExcept}[1]{I \otimes \ldots \otimes I \otimes #1 \otimes I \otimes \ldots \otimes I}
 \newcommand{\isg}[1]{\SSS_{#1}}
-\newcommand{\lpg}[1]{N(\isg{#1}) / \isg{#1}}
+\newcommand{\lpg}[1]{\LLL_{#1}}
+\newcommand{\lpglong}[1]{\NNN(\isg{#1}) / \isg{#1}}
+\newcommand{\dsg}[1]{\DDD_{#1}}
 \newcommand{\qcode}[1]{\llbracket#1\rrbracket}
 \newcommand{\ccode}[1]{[#1]}
-\newcommand{\stabCase}[1]{\hyperlink{stabilizer_formalism_case_#1}{\textit{Case #1}}}
-\newcommand{\normCase}[1]{\hyperlink{normalizer_formalism_case_#1}{\textit{Case #1}}}
-\newcommand{\modPhases}[1]{#1^\star}
-\newcommand{\addPhases}[1]{\langle i \rangle #1}
 
 % LAZINESS
 \newcommand{\ol}[1]{\overline{#1}}
 \newcommand{\qqquad}{\quad\qquad}
 \newcommand{\qqqquad}{\quad\qqquad}
+\newcommand{\qqqqquad}{\quad\qqqquad}
+\newcommand{\qqqqqquad}{\quad\qqqqquad}
+
+\newcommand\blfootnote[1]{%
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}%
+    \addtocounter{footnote}{-1}%
+    \endgroup
+}
+
+% TIKZ
+\definecolor{zx_grey}{RGB}{211,211,211}
+\definecolor{zx_red}{RGB}{239, 190, 190}
+\definecolor{zx_green}{RGB}{216,248,216}
