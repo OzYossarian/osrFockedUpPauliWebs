@@ -1,0 +1,81 @@
+% THEOREMS
+% Reset the counter for all of these every section.
+% Only have one counter total - let it be the 'theorem' counter.
+
+% Standard
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{plottwist}[theorem]{Plot-twist}
+\newtheorem{keyidea}[theorem]{Key idea}
+\newtheorem{spoiler}[theorem]{Spoiler alert}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{openquestion}[theorem]{Open question}
+\newtheorem{remark}[theorem]{Remark}
+
+% Custom
+\declaretheoremstyle[qed={$\blacksquare$}]{exampleStyle}
+\declaretheorem[style=exampleStyle, sibling=theorem, name=Example]{example}
+\declaretheorem[style=exampleStyle, sibling=theorem, name=Example, numbered=no]{example*}
+
+% REFERENCES
+% Define a `clever cite' command analogous to cleveref's functionality for references
+\newcommand{\ccite}[2][]{%
+    \IfSubStr{#2}{,}{refs.~}{ref.~}%
+    \ifthenelse{\equal{#1}{}}{\cite{#2}}{\cite[#1]{#2}}}
+\newcommand{\Ccite}[2][]{%
+    \IfSubStr{#2}{,}{Refs.~}{Ref.~}%
+    \ifthenelse{\equal{#1}{}}{\cite{#2}}{\cite[#1]{#2}}}
+% Little QEC zoo icon with URL.
+% This first one is useful as an optional argument to \cite.
+\newcommand{\zoo}[1]{%
+    \href{%
+        https://errorcorrectionzoo.org/c/#1%
+    }{\includegraphics[height=.75\baselineskip, valign=c]{%
+        figures/zoo_icon}}}
+% Use this one if the only thing being cited is the zoo.
+\newcommand{\citeZoo}[1]{\mbox{[\zoo{#1}]}}
+
+% CALLIGRAPHY
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+\newcommand{\GGG}{\mathcal{G}}
+\newcommand{\HHH}{\mathcal{H}}
+\newcommand{\MMM}{\mathcal{M}}
+\newcommand{\NNN}{\mathcal{N}}
+\newcommand{\PPP}{\mathcal{P}}
+\newcommand{\SSS}{\mathcal{S}}
+\newcommand{\TTT}{\mathcal{T}}
+
+\newcommand{\one}{\mathds{1}}
+
+% COMMENTS
+\newcommand{\teague}[1]{\textcolor{blue}{[Teague: #1]}}
+\newcommand{\Teague}[1]{\emph{[Alex: #1]}}
+
+% MATHS
+\newcommand{\defeq}{\coloneqq}
+\newcommand{\after}{\circ}
+\newcommand{\bbar}[1]{\bar{\bar{#1}}}
+\newcommand{\tbar}[1]{\tilde{\bar{#1}}}
+
+% QUANTUM
+\newcommand{\allIdentitiesExcept}[1]{I \otimes \ldots \otimes I \otimes #1 \otimes I \otimes \ldots \otimes I}
+\newcommand{\isg}[1]{\SSS_{#1}}
+\newcommand{\lpg}[1]{N(\isg{#1}) / \isg{#1}}
+\newcommand{\qcode}[1]{\llbracket#1\rrbracket}
+\newcommand{\ccode}[1]{[#1]}
+\newcommand{\stabCase}[1]{\hyperlink{stabilizer_formalism_case_#1}{\textit{Case #1}}}
+\newcommand{\normCase}[1]{\hyperlink{normalizer_formalism_case_#1}{\textit{Case #1}}}
+\newcommand{\modPhases}[1]{#1^\star}
+\newcommand{\addPhases}[1]{\langle i \rangle #1}
+
+% LAZINESS
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\qqquad}{\quad\qquad}
+\newcommand{\qqqquad}{\quad\qqquad}

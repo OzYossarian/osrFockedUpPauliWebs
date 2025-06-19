@@ -1,0 +1,53 @@
+% Default preamble
+\pdfoutput=1
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true, citecolor=cyan]{hyperref}
+\usepackage{tikz}
+\usepackage{lipsum}
+
+% Custom stuff
+% For inverse search with PDF viewer
+\usepackage{pdfsync}
+% For tikzit diagrams
+\usepackage{tikzit}
+% Various AMS packages
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+% For making 'example' environment non-italics.
+\usepackage{thmtools}
+% For blackboard font style '1'.
+\usepackage{dsfont}
+% For braket stuff, duh.
+\usepackage{braket}
+% The \coloneqq symbols, amongst others
+\usepackage{mathtools}
+% For using diagrams as mathematical objects, mostly.
+\usepackage[export]{adjustbox}
+% For multi-row (>3) group presentations.
+\usepackage{scalerel}
+% For including object type in references.
+\usepackage[nameinlink]{cleveref}
+% cleveref by default calls a subsection a `section' - override this.
+\crefname{subsection}{subsection}{subsections}
+% For defining custom 'clevercite' commands in definitions.tex.
+\usepackage{xstring}
+% For defining commands with optional arguments.
+\usepackage{ifthen}
+% For St Mary Road symbols, including double square bracket for quantum codes.
+\usepackage{stmaryrd}
+% For more complex subfigure stuff.
+\usepackage{subcaption}
+% For strikethrough text via \sout.
+% Adding option 'normalem' stops package from overwriting the \emph command.
+\usepackage[normalem]{ulem}
+
+% Allow figures placed at the bottom of documents to take up more space.
+% The default is .3 (so figures must fit in the bottom 30% of the page) -
+% change it to .7 to match the \topfraction value.
+\renewcommand\bottomfraction{.7}
