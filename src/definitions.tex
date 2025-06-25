@@ -95,7 +95,11 @@
 \newcommand{\groupPres}[1]{\left\langle #1 \right\rangle}
 
 % QUANTUM
-\newcommand{\allIdentitiesExcept}[1]{I \otimes \ldots \otimes I \otimes #1 \otimes I \otimes \ldots \otimes I}
+
+% Paulis
+\newcommand{\allIExcept}[1]{I \otimes \ldots \otimes I \otimes #1 \otimes I \otimes \ldots \otimes I}
+
+% Error correction
 \newcommand{\isg}[1]{\SSS_{#1}}
 \newcommand{\lpg}[1]{\LLL_{#1}}
 \newcommand{\lpglong}[1]{\NNN(\isg{#1}) / \isg{#1}}
@@ -103,21 +107,13 @@
 \newcommand{\qcode}[1]{\llbracket#1\rrbracket}
 \newcommand{\ccode}[1]{[#1]}
 
+% ZX
+\input{fockedup.tikzstyles}
+\input{fockedup.tikzdefs}
+
 % LAZINESS
 \newcommand{\ol}[1]{\overline{#1}}
 \newcommand{\qqquad}{\quad\qquad}
 \newcommand{\qqqquad}{\quad\qqquad}
 \newcommand{\qqqqquad}{\quad\qqqquad}
 \newcommand{\qqqqqquad}{\quad\qqqqquad}
-
-\newcommand\blfootnote[1]{%
-    \begingroup
-    \renewcommand\thefootnote{}\footnote{#1}%
-    \addtocounter{footnote}{-1}%
-    \endgroup
-}
-
-% TIKZ
-\definecolor{zx_grey}{RGB}{211,211,211}
-\definecolor{zx_red}{RGB}{239, 190, 190}
-\definecolor{zx_green}{RGB}{216,248,216}

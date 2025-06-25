@@ -1,0 +1,4 @@
+\newcommand{\isarg}[1]{\dot{#1}}
+\definecolor{zx_grey}{RGB}{211,211,211}
+\definecolor{zx_red}{RGB}{239, 190, 190}
+\definecolor{zx_green}{RGB}{216,248,216}
