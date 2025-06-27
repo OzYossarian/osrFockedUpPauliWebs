@@ -1,0 +1,129 @@
+\section{Pauli webs}
+
+\begin{itemize}
+    \item Define Pauli webs for individual spiders.
+        \begin{itemize}
+            \item Get scalars right
+            \item Pick convention for whether position or momentum displacements are `inner' or `outer' gates.
+            \item Do webs for GKP spiders.
+        \end{itemize}
+    \item Define Pauli webs for diagrams with multiple spiders.
+\end{itemize}
+
+Function $\chi_x : \mathbb{R} \to \mathbb{C}$ defined as $\chi_x(p) = e^{-i2\pi xp}$.
+Hence $\chi_0(p) = e^{-i2\pi \cdot 0 \cdot p} = 1$ is the constant function $1$.
+
+No $n \in \mathbb{N}$ such that the Kronecker delta $\delta_n: \mathbb{N} \to \mathbb{C}$ is the constant function $1$.
+
+Throughout, we will use a dot/underline/something to denote that a variable is the single argument of a function.
+For example, if writing $e^{-i2\pi \dot{x}p}$, we mean the function $x \mapsto e^{-i2\pi xp}$.
+If instead we write $e^{-i2\pi x\dot{p}}$, we mean the function $p \mapsto e^{-i2\pi xp}$.
+
+Will use shorthand:
+\begin{equation}\label{eq:mult_default}
+    \tikzfig{right_mult_default}
+    \qqqqqquad
+    \tikzfig{left_mult_default}
+\end{equation}
+
+Recall also that:
+\begin{equation}\label{eq:mult_inverse_mult_fourier}
+    \tikzfig{mult_inverse}
+    \qqqqqquad
+    \tikzfig{mult_fourier}
+\end{equation}
+
+Hence:
+\begin{equation}\label{eq:mult_default_with_fourier}
+    \tikzfig{mult_default_with_fourier}
+\end{equation}
+
+
+\begin{lemma}\label{lem:gate_absorb}
+    \begin{equation}\label{eq:gate_absorb}
+        \tikzfig{red_gate_absorb}
+        \qqqqquad
+        \tikzfig{green_gate_absorb}
+    \end{equation}
+    \begin{proof}
+        First equation makes use of the fact that $\mathcal{F}^{-1}(\mathcal{F}(f(x)) \cdot \chi_a) = f(x + a)$:
+        \begin{equation}\label{eq:red_gate_absorb_proof}
+            \tikzfig{red_gate_absorb_proof}
+        \end{equation}
+        Second equation makes use dual property $\mathcal{F}(\mathcal{F}^{-1}(f(x)) \cdot \overline{\chi}_a) = f(x - a)$:
+        \begin{equation}\label{eq:green_gate_absorb_proof}
+            \tikzfig{green_gate_absorb_proof}
+        \end{equation}
+    \end{proof}
+\end{lemma}
+
+\begin{lemma}\label{lem:gate_copy_blank_spider}
+    \begin{equation}\label{eq:gate_copy_blank_spider}
+        \tikzfig{red_gate_copy_blank_spider}
+        \qqqqquad
+        \tikzfig{green_gate_copy_blank_spider}
+    \end{equation}
+    \begin{proof}
+        Follows from state copy and bialgebra rules:
+        \begin{equation}\label{eq:red_gate_copy_blank_spider_proof}
+            \tikzfig{red_gate_copy_blank_spider_proof}
+        \end{equation}
+    \end{proof}
+\end{lemma}
+
+\begin{lemma}\label{lem:red_spider_not_flexsymmetric}
+    \begin{equation}\label{eq:red_spider_not_flexsymmetric}
+        \tikzfig{red_spider_not_flexsymmetric_v2}
+    \end{equation}
+\end{lemma}
+
+\begin{lemma}\label{lem:gate_copy}
+    \begin{equation}\label{eq:gate_copy}
+        \tikzfig{red_gate_copy}
+        \qqqqquad
+        \tikzfig{green_gate_copy}
+    \end{equation}
+    \begin{proof}
+        \begin{equation}\label{eq:red_gate_copy_proof}
+            \tikzfig{red_gate_copy_proof}
+        \end{equation}
+    \end{proof}
+\end{lemma}
+
+\begin{lemma}\label{lem:red_gate_copy_multi_inputs}
+    \begin{equation}\label{eq:red_gate_copy_multi_inputs}
+        \tikzfig{red_gate_copy_multi_input}
+    \end{equation}
+\end{lemma}
+
+\begin{lemma}\label{lem:chi_constant_iff}
+    The function $\chi_a(x) = e^{-i2\pi ax}$ is a constant function iff $a = 0$, in which case it's the constant function $1$.
+\end{lemma}
+
+\begin{lemma}\label{lem:red_gate_copy_cancel}
+    \begin{equation}\label{eq:red_gate_copy_cancel}
+        \tikzfig{red_gate_copy_cancel}
+    \end{equation}
+\end{lemma}
+
+%TODO - maybe replace spiders in the middle with very generic diagram boxes?
+\begin{definition}[Pauli webs]\label{defn:pauli_webs}
+    \begin{equation}\label{eq:general_pauli_web_green_spider}
+        \tikzfig{general_pauli_web_green_spider}
+    \end{equation}
+    \vspace{20pt}
+    \begin{equation}\label{eq:general_pauli_web_red_spider}
+        \tikzfig{general_pauli_web_red_spider}
+    \end{equation}
+\end{definition}
+
+\begin{proposition}\label{thm:general_pauli_web_green_gaussian_spider}
+    A highlighting of edges around a Gaussian $Z$ spider with phase function $e^{i(t + u\isarg{x} + v\isarg{x}^2)}$ is a Pauli web iff it's of the following form, where $2\pi \sum_j a_j = 2vb$:
+    \begin{equation}\label{eq:general_pauli_web_green_linear_spider}
+        \tikzfig{general_pauli_web_green_gaussian_spider}
+    \end{equation}
+    \begin{proof}
+        TODO
+    \end{proof}π
+\end{proposition}
+

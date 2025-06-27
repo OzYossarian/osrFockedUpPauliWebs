@@ -1,0 +1,42 @@
+\section{Fourier transform, Dirac delta}
+
+TODO: don't need all this, apparently these Fourier transform properties are very standard.
+
+Fourier transforms:
+\begin{equation}\label{eq:fourier_transforms_defn}
+\begin{aligned}
+    \mathcal{F}(f)(p) &= \int_{-\infty}^{\infty} f(t) e^{-i 2 \pi p t} d t \\[5pt]
+    \mathcal{F}^{-1}(f)(q) &= \int_{-\infty}^{\infty} f(t) e^{i 2 \pi q t} d t
+\end{aligned}
+\end{equation}
+
+Dirac delta properties, presumably ill-defined, worry later:
+\begin{equation}\label{eq:dirac_delta_properties}
+\int_{-\infty}^{\infty} e^{2 \pi i t a} dt = \delta(a)
+\qqqquad
+\int_{-\infty}^{\infty} f(t) \delta(t-a) dt = f(a)
+\qqqquad
+\delta(t) = \delta(-t)
+\end{equation}
+
+\begin{lemma}
+    For any $f: \mathbb{R} \to \mathbb{C}$, we have $\mathcal{F}^{-1}(\mathcal{F}(f) \cdot \chi_a) = f(x - a)$.
+    \begin{proof}
+        Expand and simplify.
+        Hard part is keeping track of the three variables $x$, $y$ and $z$ we introduce.
+        \begin{align*}
+            \mathcal{F}^{-1}(\mathcal{F}(f) \cdot \chi_a)
+            &= \mathcal{F}^{-1}(\mathcal{F}(f(z))(y) \cdot \chi_a(y))(x) \\
+            &= \mathcal{F}^{-1}\left(\left[\int_{-\infty}^{\infty} f(z) e^{-i2\pi yz} \, dz\right] \cdot e^{-i2\pi ay}\right)(x) \\
+            &= \int_{-\infty}^{\infty} \left[\int_{-\infty}^{\infty} f(z) e^{-i2\pi yz} \, dz\right] \cdot e^{-i2\pi ay} \cdot e^{i2\pi yx} \, dy \\
+            &= \int_{-\infty}^{\infty} \left[\int_{-\infty}^{\infty} f(z) e^{-i2\pi yz} \, dz\right] \cdot e^{i2\pi y(x-a)} \, dy \\
+            &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(z) e^{i2\pi y(x-a-z)} \, dz\, dy \\
+            &= \int_{-\infty}^{\infty} f(z) \left[\int_{-\infty}^{\infty} e^{i2\pi y(x-a-z)} \, dy\right] dz \\
+            \intertext{Now use the Dirac delta properties from \Cref{eq:dirac_delta_properties}:}
+            &= \int_{-\infty}^{\infty} f(z) \delta(x-a-z) \, dz \\
+            &= \int_{-\infty}^{\infty} f(z) \delta(z - (x-a)) \, dz \\
+            &= f(x-a)
+        \end{align*}
+    \end{proof}
+\end{lemma}
+

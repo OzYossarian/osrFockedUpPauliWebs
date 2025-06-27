@@ -15,23 +15,27 @@
 \usepackage{lipsum}
 
 % Custom stuff
+
+% Inuput .tikzdefs ASAP - some packages are installed there.
+\input{preamble/fockedup.tikzdefs}
+\input{preamble/fockedup.tikzstyles}
+
 % For inverse search with PDF viewer
 \usepackage{pdfsync}
-% Various AMS packages
-\usepackage{amsfonts}
+%% Various AMS packages - MOVED TO .tikzdefs!
+%\usepackage{amsfonts}
 \usepackage{amsthm}
-\usepackage{amssymb}
-% For tikzit - color package needed for tikzdefs.
-%\usepackage{color}
-\usepackage{tikzit}
+%\usepackage{amssymb}
+% For tikzit, duh.
+\usepackage{preamble/tikzit}
 % For making 'example' environment non-italics.
 \usepackage{thmtools}
 % For blackboard font style '1'.
 \usepackage{dsfont}
 % For braket stuff, duh.
 \usepackage{braket}
-% The \coloneqq symbols, amongst others
-\usepackage{mathtools}
+%% The \coloneqq symbols, amongst others - MOVED TO .tikzdefs!
+%\usepackage{mathtools}
 % For using diagrams as mathematical objects, mostly.
 \usepackage[export]{adjustbox}
 % For multi-row (>3) group presentations.
@@ -61,4 +65,4 @@
 % Set the depth of the table of contents
 \setcounter{tocdepth}{2}
 
-\input{definitions}
+\input{preamble/definitions}
