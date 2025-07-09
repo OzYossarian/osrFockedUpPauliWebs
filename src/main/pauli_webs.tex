@@ -50,7 +50,7 @@ Hence:
         \begin{equation}\label{eq:red_gate_absorb_proof}
             \tikzfig{red_gate_absorb_proof}
         \end{equation}
-        Second equation makes use dual property $\mathcal{F}(\mathcal{F}^{-1}(f(x)) \cdot \overline{\chi}_a) = f(x - a)$:
+        Second equation makes use of the dual property $\mathcal{F}(\mathcal{F}^{-1}(f(x)) \cdot \overline{\chi}_a) = f(x - a)$:
         \begin{equation}\label{eq:green_gate_absorb_proof}
             \tikzfig{green_gate_absorb_proof}
         \end{equation}
@@ -124,6 +124,27 @@ Hence:
     \end{equation}
     \begin{proof}
         TODO
-    \end{proof}π
+    \end{proof}
 \end{proposition}
 
+\begin{definition}\label{defn:indicator_function}
+    For any predicate $f: \mathbb{R} \to \mathbb{B}$, we define $\indicator{f(\isarg{x})} : \mathbb{R} \to \mathbb{C}$ as:
+    \begin{equation}\label{eq:indicator_function}
+        \indicator{f(\isarg{x})} = \begin{cases}
+            1 &\text{ if } f(x) \\
+            0 &\text{ else }
+        \end{cases}
+    \end{equation}
+\end{definition}
+
+We will also use the shorthand $x \eqmod{r} y$ to mean $x = y$ mod $r$.
+
+\begin{proposition}\label{thm:general_pauli_web_green_gkp_like_spider}
+A highlighting of edges around a $Z$ spider with phase function $\llbracket \isarg{x} \eqmod{r} 0 \rrbracket$ is a Pauli web iff it's of the following form, where $b \eqmod{r} 0$ and $r \sum_j a_j \eqmod{1} 0$:
+\begin{equation}\label{eq:general_pauli_web_green_gkp_like_spider}
+    \tikzfig{general_pauli_web_green_gkp_like_spider}
+\end{equation}
+\begin{proof}
+    TODO
+\end{proof}
+\end{proposition}

@@ -1,0 +1,53 @@
+% Default preamble
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true, citecolor=gray]{hyperref}
+% xcolor isn't a default, but if using with options like `dvipsnames',
+% this clashes with tikz' own import of xcolor.
+% So must import it here first.
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage{lipsum}
+
+% Custom stuff
+
+% Inuput .tikzdefs ASAP - some packages are installed there.
+\input{preamble/fockedup.tikzdefs}
+\input{preamble/fockedup.tikzstyles}
+
+% For inverse search with PDF viewer
+\usepackage{pdfsync}
+%% Various AMS packages - MOVED TO .tikzdefs!
+%\usepackage{amsfonts}
+\usepackage{amsthm}
+%\usepackage{amssymb}
+% For tikzit, duh.
+\usepackage{preamble/tikzit}
+% For making 'example' environment non-italics.
+\usepackage{thmtools}
+% For blackboard font style '1'.
+\usepackage{dsfont}
+% For braket stuff, duh.
+\usepackage{braket}
+%% The \coloneqq symbols, amongst others - MOVED TO .tikzdefs!
+%\usepackage{mathtools}
+% For using diagrams as mathematical objects, mostly.
+\usepackage[export]{adjustbox}
+% For multi-row (>3) group presentations.
+\usepackage{scalerel}
+% For including object type in references.
+\usepackage[nameinlink]{cleveref}
+% For defining custom 'clevercite' commands in definitions.tex.
+\usepackage{xstring}
+% For defining commands with optional arguments.
+\usepackage{ifthen}
+% For more complex subfigure stuff.
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+% For strikethrough text via \sout.
+% Adding option 'normalem' stops package from overwriting the \emph command.
+\usepackage[normalem]{ulem}

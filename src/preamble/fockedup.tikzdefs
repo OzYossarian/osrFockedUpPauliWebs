@@ -3,8 +3,12 @@
 \usepackage{amssymb}
 % The \coloneqq symbols, amongst others
 \usepackage{mathtools}
+% For St Mary Road symbols, including double square bracket for indicator functions.
+\usepackage{stmaryrd}
 
 \newcommand{\isarg}[1]{\dot{#1}}
+\newcommand{\eqmod}[1]{\overset{#1}{=}}
+\newcommand{\indicator}[1]{\llbracket #1 \rrbracket}
 
 \definecolor{zx_grey}{RGB}{211,211,211}
 \definecolor{zx_red}{RGB}{239, 190, 190}
