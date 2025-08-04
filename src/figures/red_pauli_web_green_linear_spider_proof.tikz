@@ -1,0 +1,77 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={rn_phase}] (49) at (-4, -1) {$\chi_{-b}$};
+		\node [style=none] (50) at (-4, 1) {};
+		\node [style=none] (51) at (-4, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (52) at (-1, 1) {};
+		\node [style=none] (53) at (-1, -1) {};
+		\node [style={rn_phase}] (54) at (-4, 1) {$\chi_{-b}$};
+		\node [style={gn_phase}] (55) at (-5.5, 0) {$e^{iu\isarg{x}}$};
+		\node [style={rn_phase}] (56) at (-7, -1) {$\chi_b$};
+		\node [style=none] (58) at (-7, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (59) at (-9.25, 1) {};
+		\node [style=none] (60) at (-9.25, -1) {};
+		\node [style={rn_phase}] (61) at (-7, 1) {$\chi_b$};
+		\node [style=none] (74) at (0, 0) {$=$};
+		\node [style=none] (75) at (14.25, -1) {};
+		\node [style=none] (76) at (14.25, 1) {};
+		\node [style=none] (77) at (13.75, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (78) at (14.25, 1) {};
+		\node [style={gn_phase}] (79) at (11.25, 0) {$e^{iu\isarg{x}}e^{-iub}\prod_j \overline{\chi}_j$};
+		\node [style=none] (80) at (8.25, -1) {};
+		\node [style=none] (81) at (8.75, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (82) at (8.25, 1) {};
+		\node [style=none] (83) at (7.25, 0) {$=$};
+		\node [style=none] (84) at (22.75, -1) {};
+		\node [style=none] (85) at (22.75, 1) {};
+		\node [style=none] (86) at (22.25, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (87) at (22.75, 1) {};
+		\node [style={gn_phase}] (88) at (20.25, 0) {$e^{iu\isarg{x}}$};
+		\node [style=none] (89) at (17.75, -1) {};
+		\node [style=none] (90) at (18.25, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (91) at (17.75, 1) {};
+		\node [style=none] (92) at (15.25, 0) {$=$};
+		\node [style=none] (93) at (16.75, 0) {$e^{-iub}$};
+		\node [style={gn_phase}] (94) at (-8.25, 1) {$\overline{\chi}_{a_1}$};
+		\node [style={gn_phase}] (95) at (-8.25, -1) {$\overline{\chi}_{a_n}$};
+		\node [style={gn_phase}] (96) at (-2.25, 1) {$\overline{\chi}_{a_{n+1}}$};
+		\node [style={gn_phase}] (97) at (-2.25, -1) {$\overline{\chi}_{a_{n+m}}$};
+		\node [style=none] (100) at (5, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={gn_phase}] (102) at (3.5, 0) {$e^{iu(\isarg{x} - b)}$};
+		\node [style=none] (104) at (2, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (106) at (1, 1) {};
+		\node [style=none] (107) at (1, -1) {};
+		\node [style=none] (108) at (6.25, -1) {};
+		\node [style=none] (109) at (6.25, 1) {};
+		\node [style={gn_phase}] (110) at (2, 1) {$\overline{\chi}_{a_1}$};
+		\node [style={gn_phase}] (111) at (2, -1) {$\overline{\chi}_{a_n}$};
+		\node [style={gn_phase}] (112) at (5, 1) {$\overline{\chi}_{a_{n+1}}$};
+		\node [style={gn_phase}] (113) at (5, -1) {$\overline{\chi}_{a_{n+m}}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (50.center) to (52.center);
+		\draw (49) to (53.center);
+		\draw [bend left, looseness=0.75] (55) to (56);
+		\draw (56) to (60.center);
+		\draw [bend left, looseness=0.75] (55) to (50.center);
+		\draw [bend right, looseness=0.75] (55) to (49);
+		\draw [bend right, looseness=0.75] (55) to (61);
+		\draw (61) to (59.center);
+		\draw [in=0, out=-120, looseness=0.75] (79) to (80.center);
+		\draw [in=-180, out=60, looseness=0.75] (79) to (76.center);
+		\draw [in=180, out=-60, looseness=0.75] (79) to (75.center);
+		\draw [in=360, out=120, looseness=0.75] (79) to (82.center);
+		\draw [in=0, out=-120, looseness=0.75] (88) to (89.center);
+		\draw [in=-180, out=60, looseness=0.75] (88) to (85.center);
+		\draw [in=180, out=-60, looseness=0.75] (88) to (84.center);
+		\draw [in=360, out=120, looseness=0.75] (88) to (91.center);
+		\draw [bend left, looseness=0.75] (102) to (111);
+		\draw [bend left, looseness=0.75] (102) to (112);
+		\draw [bend right, looseness=0.75] (102) to (113);
+		\draw [bend right, looseness=0.75] (102) to (110);
+		\draw (112) to (109.center);
+		\draw (113) to (108.center);
+		\draw (107.center) to (111);
+		\draw (106.center) to (110);
+	\end{pgfonlayer}
+\end{tikzpicture}

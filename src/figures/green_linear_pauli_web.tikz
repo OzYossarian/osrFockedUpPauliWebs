@@ -1,0 +1,53 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (5) at (-2, 1) {};
+		\node [style=none] (6) at (-2, -1) {};
+		\node [style=none] (7) at (-2.25, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={gn_phase}] (8) at (-3.5, 0) {$e^{ia\isarg{x}}$};
+		\node [style=none] (9) at (-5, 1) {};
+		\node [style=none] (10) at (-5, -1) {};
+		\node [style=none] (11) at (-4.75, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (12) at (0, 0) {$\iff$};
+		\node [style=none] (15) at (5.75, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={gn_phase}] (16) at (4.5, 0) {$e^{ia\isarg{x}}$};
+		\node [style={gn_phase}] (17) at (3, 1) {$\overline{\chi}_{p_1}$};
+		\node [style=none] (19) at (3.25, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (20) at (2, 1) {};
+		\node [style={gn_phase}] (21) at (3, -1) {$\overline{\chi}_{p_n}$};
+		\node [style=none] (22) at (2, -1) {};
+		\node [style={gn_phase}] (23) at (6, -1) {$\overline{\chi}_{p_{n+m}}$};
+		\node [style=none] (24) at (7, -1) {};
+		\node [style={gn_phase}] (25) at (6, 1) {$\overline{\chi}_{p_{n+1}}$};
+		\node [style=none] (26) at (7, 1) {};
+		\node [style={gn_web}] (27) at (-4.5, 1.5) {$p_1$};
+		\node [style=none] (28) at (12.75, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={gn_phase}] (29) at (11.5, 0) {$e^{ia\isarg{x}}$};
+		\node [style=none] (30) at (10, 1) {};
+		\node [style=none] (31) at (10.25, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (33) at (10, -1) {};
+		\node [style=none] (35) at (13, -1) {};
+		\node [style=none] (37) at (13, 1) {};
+		\node [style=none] (38) at (8.5, 0) {$=$};
+		\node [style={gn_web}] (39) at (-2.75, 1.5) {$p_{n+1}$};
+		\node [style={gn_web}] (41) at (-2.75, -1.5) {$p_{n+m}$};
+		\node [style={gn_web}] (42) at (-4.5, -1.5) {$p_n$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=zweb, bend right, looseness=0.75] (8) to (9.center);
+		\draw [style=zweb, bend left, looseness=0.75] (8) to (10.center);
+		\draw [style=zweb, bend left, looseness=0.75] (8) to (5.center);
+		\draw [style=zweb, bend right, looseness=0.75] (8) to (6.center);
+		\draw [bend right, looseness=0.75] (16) to (17);
+		\draw (17) to (20.center);
+		\draw (21) to (22.center);
+		\draw [bend left, looseness=0.75] (16) to (21);
+		\draw (23) to (24.center);
+		\draw [bend right, looseness=0.75] (16) to (23);
+		\draw (25) to (26.center);
+		\draw [bend left, looseness=0.75] (16) to (25);
+		\draw [bend right, looseness=0.75] (29) to (30.center);
+		\draw [bend left, looseness=0.75] (29) to (33.center);
+		\draw [bend right, looseness=0.75] (29) to (35.center);
+		\draw [bend left, looseness=0.75] (29) to (37.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

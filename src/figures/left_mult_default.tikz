@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=lmat] (0) at (-2, 0) {};
+		\node [style=none] (1) at (-3, 0) {};
+		\node [style=none] (2) at (-1, 0) {};
+		\node [style=lmat] (3) at (2, 0) {$-1$};
+		\node [style=none] (4) at (1, 0) {};
+		\node [style=none] (5) at (3, 0) {};
+		\node [style=none] (6) at (0, 0) {$\coloneqq$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1.center) to (2.center);
+		\draw (4.center) to (5.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

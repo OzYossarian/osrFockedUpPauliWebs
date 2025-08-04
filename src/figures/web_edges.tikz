@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={gn_phase}] (0) at (0, 0) {$e^{iax^2}$};
+		\node [style=none] (1) at (3, 1) {};
+		\node [style=none] (2) at (3, -1) {};
+		\node [style=none] (3) at (-3, 1) {};
+		\node [style=none] (4) at (-3, -1) {};
+		\node [style=none] (5) at (2, 0) {\vdots};
+		\node [style=none] (6) at (-2, 0) {\vdots};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right=15] (4.center) to (0);
+		\draw [bend left=15] (3.center) to (0);
+		\draw [bend left=15] (0) to (1.center);
+		\draw [bend right=15] (0) to (2.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

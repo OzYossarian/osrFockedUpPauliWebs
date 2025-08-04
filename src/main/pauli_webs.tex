@@ -46,7 +46,7 @@ Hence:
         \tikzfig{green_gate_absorb}
     \end{equation}
     \begin{proof}
-        First equation makes use of the fact that $\mathcal{F}^{-1}(\mathcal{F}(f(x)) \cdot \chi_a) = f(x + a)$:
+        First equation makes use of the fact that $\mathcal{F}^{-1}(\mathcal{F}(f(x)) \cdot \chi_a) = f(x - a)$:
         \begin{equation}\label{eq:red_gate_absorb_proof}
             \tikzfig{red_gate_absorb_proof}
         \end{equation}
@@ -107,7 +107,9 @@ Hence:
 \end{lemma}
 
 %TODO - maybe replace spiders in the middle with very generic diagram boxes?
-\begin{definition}[Pauli webs]\label{defn:pauli_webs}
+TODO - change this - in OG paper the generators are the $Z$ and Fock spiders, so maybe stick to that here?
+And give the red spider webs as a special case of webs on diagrams with multiple spiders?
+\begin{definition}[Pauli web on a single $Z$ or $X$ spider]\label{defn:pauli_webs}
     \begin{equation}\label{eq:general_pauli_web_green_spider}
         \tikzfig{general_pauli_web_green_spider}
     \end{equation}

@@ -1,0 +1,52 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={gn_phase}] (49) at (-2, -1) {$\overline{\chi}_{a_{n+m}}$};
+		\node [style=none] (50) at (-2, 1) {};
+		\node [style=none] (51) at (-2, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (52) at (-1, 1) {};
+		\node [style=none] (53) at (-1, -1) {};
+		\node [style={gn_phase}] (54) at (-2, 1) {$\overline{\chi}_{a_{n+1}}$};
+		\node [style={gn_phase}] (55) at (-3.5, 0) {$e^{iu\isarg{x}}$};
+		\node [style={gn_phase}] (56) at (-5, -1) {$\overline{\chi}_{a_n}$};
+		\node [style=none] (58) at (-5, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (59) at (-6, 1) {};
+		\node [style=none] (60) at (-6, -1) {};
+		\node [style={gn_phase}] (61) at (-5, 1) {$\overline{\chi}_{a_1}$};
+		\node [style=none] (62) at (6, -1) {};
+		\node [style=none] (63) at (6, 1) {};
+		\node [style=none] (64) at (5.5, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (67) at (6, 1) {};
+		\node [style={gn_phase}] (68) at (3.5, 0) {$e^{iu\isarg{x}} \prod_j \overline{\chi}_{a_j}$};
+		\node [style=none] (69) at (1, -1) {};
+		\node [style=none] (70) at (1.5, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (73) at (1, 1) {};
+		\node [style=none] (74) at (0, 0) {$=$};
+		\node [style=none] (93) at (13, -1) {};
+		\node [style=none] (94) at (13, 1) {};
+		\node [style=none] (95) at (12.5, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (96) at (13, 1) {};
+		\node [style={gn_phase}] (97) at (10.5, 0) {$e^{iu\isarg{x}}$};
+		\node [style=none] (98) at (8, -1) {};
+		\node [style=none] (99) at (8.5, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (100) at (8, 1) {};
+		\node [style=none] (101) at (7, 0) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (50.center) to (52.center);
+		\draw (49) to (53.center);
+		\draw [bend left, looseness=0.75] (55) to (56);
+		\draw (56) to (60.center);
+		\draw [bend left, looseness=0.75] (55) to (50.center);
+		\draw [bend right, looseness=0.75] (55) to (49);
+		\draw [bend right, looseness=0.75] (55) to (61);
+		\draw (61) to (59.center);
+		\draw [in=0, out=-120, looseness=0.75] (68) to (69.center);
+		\draw [in=-180, out=60, looseness=0.75] (68) to (63.center);
+		\draw [in=180, out=-60, looseness=0.75] (68) to (62.center);
+		\draw [in=360, out=120, looseness=0.75] (68) to (73.center);
+		\draw [in=0, out=-120, looseness=0.75] (97) to (98.center);
+		\draw [in=-180, out=60, looseness=0.75] (97) to (94.center);
+		\draw [in=180, out=-60, looseness=0.75] (97) to (93.center);
+		\draw [in=360, out=120, looseness=0.75] (97) to (100.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

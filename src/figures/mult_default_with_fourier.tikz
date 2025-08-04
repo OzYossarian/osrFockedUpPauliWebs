@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rmat] (0) at (-4.25, 0) {$-1$};
+		\node [style=none] (1) at (-5.25, 0) {};
+		\node [style=none] (2) at (-3.25, 0) {};
+		\node [style=rmat] (3) at (-8.25, 0) {};
+		\node [style=none] (4) at (-9.25, 0) {};
+		\node [style=none] (5) at (-7.25, 0) {};
+		\node [style=none] (6) at (6.25, 0) {$\eqqcolon$};
+		\node [style=lmat] (7) at (8.25, 0) {};
+		\node [style=none] (8) at (7.25, 0) {};
+		\node [style=none] (9) at (9.25, 0) {};
+		\node [style=lmat] (10) at (4.25, 0) {$-1$};
+		\node [style=none] (11) at (3.25, 0) {};
+		\node [style=none] (12) at (5.25, 0) {};
+		\node [style=none] (13) at (-6.25, 0) {$\coloneqq$};
+		\node [style=none] (14) at (-2.25, 0) {$=$};
+		\node [style={fn_phase}] (15) at (0, 0) {$(-1)^{\isarg{n}}$};
+		\node [style=none] (16) at (-1.25, 0) {};
+		\node [style=none] (17) at (1.25, 0) {};
+		\node [style=none] (18) at (2.25, 0) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1.center) to (2.center);
+		\draw (4.center) to (5.center);
+		\draw (8.center) to (9.center);
+		\draw (11.center) to (12.center);
+		\draw (16.center) to (17.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rmat] (0) at (-2, 0) {$-1$};
+		\node [style=none] (1) at (-3, 0) {};
+		\node [style=none] (2) at (-1, 0) {};
+		\node [style=rmat] (3) at (-6, 0) {};
+		\node [style=none] (4) at (-7, 0) {};
+		\node [style=none] (5) at (-5, 0) {};
+		\node [style=none] (6) at (4, 0) {$\eqqcolon$};
+		\node [style=lmat] (7) at (6, 0) {};
+		\node [style=none] (8) at (5, 0) {};
+		\node [style=none] (9) at (7, 0) {};
+		\node [style=lmat] (10) at (2, 0) {$-1$};
+		\node [style=none] (11) at (1, 0) {};
+		\node [style=none] (12) at (3, 0) {};
+		\node [style=none] (13) at (-4, 0) {$\coloneqq$};
+		\node [style=none] (14) at (0, 0) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1.center) to (2.center);
+		\draw (4.center) to (5.center);
+		\draw (8.center) to (9.center);
+		\draw (11.center) to (12.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

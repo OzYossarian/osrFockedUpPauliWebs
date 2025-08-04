@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={fn_phase}] (0) at (2.25, 0) {$(-1)^{\isarg{n}}$};
+		\node [style=none] (1) at (1, 0) {};
+		\node [style=none] (2) at (3.5, 0) {};
+		\node [style=rmat] (3) at (-2, 0) {$-1$};
+		\node [style=none] (4) at (-3, 0) {};
+		\node [style=none] (5) at (-1, 0) {};
+		\node [style=none] (6) at (0, 0) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=180, out=0] (1.center) to (2.center);
+		\draw (4.center) to (5.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

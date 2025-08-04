@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (5) at (2.5, 1) {};
+		\node [style=none] (6) at (2.5, -1) {};
+		\node [style=none] (7) at (2, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={gn_web}] (27) at (-1.75, 2.125) {$a_1$};
+		\node [style={gn_web}] (39) at (1.75, 2.125) {$a_{n+1}$};
+		\node [style={gn_web}] (41) at (1.75, -2.125) {$a_{n+m}$};
+		\node [style={gn_web}] (42) at (-1.75, -2.125) {$a_n$};
+		\node [style=none] (43) at (-2.5, 1) {};
+		\node [style=none] (44) at (-2.5, -1) {};
+		\node [style=none] (45) at (-2, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={gn_phase}] (46) at (0, 0) {$e^{iv\isarg{x}^2}$};
+		\node [style={rn_web}] (47) at (-1.75, 1.5) {$b$};
+		\node [style={rn_web}] (48) at (1.75, 1.5) {$-b$};
+		\node [style={rn_web}] (49) at (1.75, -1.5) {$-b$};
+		\node [style={rn_web}] (50) at (-1.75, -1.5) {$b$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=yweb, in=360, out=135] (46) to (43.center);
+		\draw [style=yweb, in=0, out=-135] (46) to (44.center);
+		\draw [style=yweb, in=180, out=45] (46) to (5.center);
+		\draw [style=yweb, in=180, out=-45] (46) to (6.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

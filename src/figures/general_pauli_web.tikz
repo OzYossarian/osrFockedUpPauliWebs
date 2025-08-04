@@ -1,0 +1,61 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (5) at (-2, 1) {};
+		\node [style=none] (6) at (-2, -1) {};
+		\node [style=none] (7) at (-2.5, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (12) at (0, 0) {$\iff$};
+		\node [style=none] (15) at (8.25, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={gn_phase}] (16) at (5.5, 0) {$e^{i(a\isarg{q} + b\isarg{q}^2)}$};
+		\node [style={rn_phase}] (17) at (3.75, 1) {${\chi}_{q_1}$};
+		\node [style=none] (19) at (3.125, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (20) at (1.5, 1) {};
+		\node [style={rn_phase}] (21) at (3.75, -1) {${\chi}_{q_n}$};
+		\node [style=none] (22) at (1.5, -1) {};
+		\node [style={rn_phase}] (23) at (7.25, -1) {${\chi}_{q_{n+m}}$};
+		\node [style=none] (24) at (10.5, -1) {};
+		\node [style={rn_phase}] (25) at (7.25, 1) {${\chi}_{q_{n+1}}$};
+		\node [style=none] (26) at (10.5, 1) {};
+		\node [style={gn_web}] (27) at (-6.25, 2.125) {$p_1$};
+		\node [style=none] (28) at (17.75, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={gn_phase}] (29) at (15.5, 0) {$e^{i(a\isarg{q} + b\isarg{q}^2)}$};
+		\node [style=none] (30) at (13, 1) {};
+		\node [style=none] (31) at (13.5, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (33) at (13, -1) {};
+		\node [style=none] (35) at (18, -1) {};
+		\node [style=none] (37) at (18, 1) {};
+		\node [style=none] (38) at (11.75, 0) {$\propto$};
+		\node [style={gn_web}] (39) at (-2.75, 2.125) {$p_{n+1}$};
+		\node [style={gn_web}] (41) at (-2.75, -2.125) {$p_{n+m}$};
+		\node [style={gn_web}] (42) at (-6.25, -2.125) {$p_n$};
+		\node [style=none] (43) at (-7, 1) {};
+		\node [style=none] (44) at (-7, -1) {};
+		\node [style=none] (45) at (-6.5, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={gn_phase}] (46) at (-4.5, 0) {$e^{i(a\isarg{q} + b\isarg{q}^2)}$};
+		\node [style={rn_web}] (47) at (-6.25, 1.5) {$q_1$};
+		\node [style={rn_web}] (48) at (-2.75, 1.5) {$q_{n+1}$};
+		\node [style={rn_web}] (49) at (-2.75, -1.5) {$q_{n+m}$};
+		\node [style={rn_web}] (50) at (-6.25, -1.5) {$q_n$};
+		\node [style={gn_phase}] (51) at (2.5, 1) {$\overline{\chi}_{p_1}$};
+		\node [style={gn_phase}] (52) at (2.5, -1) {$\overline{\chi}_{p_n}$};
+		\node [style={gn_phase}] (53) at (9.25, -1) {$\overline{\chi}_{p_{n+m}}$};
+		\node [style={gn_phase}] (54) at (9.25, 1) {$\overline{\chi}_{p_{n+1}}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right, looseness=0.75] (16) to (17);
+		\draw (17) to (20.center);
+		\draw (21) to (22.center);
+		\draw [bend left, looseness=0.75] (16) to (21);
+		\draw (23) to (24.center);
+		\draw [bend right, looseness=0.75] (16) to (23);
+		\draw (25) to (26.center);
+		\draw [bend left, looseness=0.75] (16) to (25);
+		\draw [bend right=15] (29) to (30.center);
+		\draw [bend left=15] (29) to (33.center);
+		\draw [bend right=15] (29) to (35.center);
+		\draw [bend left=15] (29) to (37.center);
+		\draw [style=yweb, bend right=15] (46) to (43.center);
+		\draw [style=yweb, bend left=15] (46) to (44.center);
+		\draw [style=yweb, bend left=15] (46) to (5.center);
+		\draw [style=yweb, bend right=15] (46) to (6.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
