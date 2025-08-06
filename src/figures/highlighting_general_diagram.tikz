@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=squareNE] (0) at (-2.25, 0) {$f$};
+		\node [style=squareNE] (1) at (2.25, 0) {$g$};
+		\node [style=none] (4) at (4.25, 1) {};
+		\node [style=none] (5) at (4.25, -1) {};
+		\node [style=none] (8) at (-4.25, 1) {};
+		\node [style=none] (9) at (-4.25, -1) {};
+		\node [style={gn_web}] (10) at (-3.5, 2.125) {$a_1$};
+		\node [style={gn_web}] (11) at (-3.5, -2.125) {$a_n$};
+		\node [style=none] (14) at (-3.75, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={rn_web}] (16) at (-3.5, 1.5) {$b_1$};
+		\node [style={rn_web}] (17) at (-3.5, -1.5) {$b_n$};
+		\node [style={gn_web}] (18) at (3.5, 2.125) {$c_1$};
+		\node [style={gn_web}] (19) at (3.5, -2.125) {$c_n$};
+		\node [style=none] (22) at (3.75, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={rn_web}] (24) at (3.5, 1.5) {$d_1$};
+		\node [style={rn_web}] (25) at (3.5, -1.5) {$d_n$};
+		\node [style={gn_web}] (26) at (-1, 1.25) {$a$};
+		\node [style={rn_web}] (27) at (-1, 0.625) {$b$};
+		\node [style={gn_web}] (28) at (1, 1.25) {$c$};
+		\node [style={rn_web}] (29) at (1, 0.625) {$d$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=yweb] (0) to (1);
+		\draw [style=yweb, in=-180, out=45, looseness=0.75] (1) to (4.center);
+		\draw [style=yweb, in=180, out=-45, looseness=0.75] (1) to (5.center);
+		\draw [style=yweb, in=0, out=135, looseness=0.75] (0) to (8.center);
+		\draw [style=yweb, in=0, out=-135, looseness=0.75] (0) to (9.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

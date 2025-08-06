@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (2, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=squareNE] (1) at (0, 0) {$f$};
+		\node [style=none] (2) at (-2.5, 1) {};
+		\node [style=none] (3) at (-2, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=none] (4) at (-2.5, -1) {};
+		\node [style=none] (5) at (2.5, -1) {};
+		\node [style=none] (6) at (2.5, 1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=360, out=135] (1) to (2.center);
+		\draw [in=0, out=-135] (1) to (4.center);
+		\draw [in=180, out=-45] (1) to (5.center);
+		\draw [in=180, out=45] (1) to (6.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

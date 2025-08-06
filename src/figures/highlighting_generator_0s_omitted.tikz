@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (9) at (2.5, 1) {};
+		\node [style=none] (10) at (2.5, -1) {};
+		\node [style=none] (11) at (2, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style={gn_web}] (13) at (1.75, 1.5) {$a_{n+1}$};
+		\node [style={gn_web}] (14) at (1.75, -2.125) {$a_{n+m}$};
+		\node [style=none] (16) at (-2.5, 1) {};
+		\node [style=none] (17) at (-2.5, -1) {};
+		\node [style=none] (18) at (-2, 0) {\raisebox{1.3ex}{$\vdots$}};
+		\node [style=squareNE] (19) at (0, 0) {$f$};
+		\node [style={rn_web}] (22) at (1.75, -1.5) {$b_{n+m}$};
+		\node [style={rn_web}] (23) at (-1.75, -1.5) {$b_n$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=360, out=135] (19) to (16.center);
+		\draw [style=xweb, in=0, out=-135] (19) to (17.center);
+		\draw [style=zweb, in=180, out=45] (19) to (9.center);
+		\draw [style=yweb, in=180, out=-45] (19) to (10.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -13,3 +13,48 @@
 \definecolor{zx_grey}{RGB}{211,211,211}
 \definecolor{zx_red}{RGB}{239, 190, 190}
 \definecolor{zx_green}{RGB}{216,248,216}
+
+% Make the asymmetric square shapes, for generic linear maps.
+\makeatletter
+\pgfdeclareshape{squareNE}{
+    \inheritsavedanchors[from=rectangle]
+    \inheritanchor[from=rectangle]{center}
+    \inheritanchor[from=rectangle]{north}
+    \inheritanchor[from=rectangle]{south}
+    \inheritanchor[from=rectangle]{west}
+    \inheritanchor[from=rectangle]{east}
+    \inheritanchor[from=rectangle]{north west}
+    \inheritanchor[from=rectangle]{south west}
+    \inheritanchor[from=rectangle]{south east}
+    \anchor{north east}{
+        \northeast
+        \advance\pgf@y by 1pt
+    }
+
+    % Want the endpoint of the edges terminating at this node to be the center of the node,
+    % so that highlighted edges (e.g. Pauli webs) look nice.
+    % If we don't do this, the edges terminate right on the edge of the shape,
+    % and there's a weird gap where the highlightings stop.
+    % If instead the edges terminate at the center, the highlightings continue "behind" the node,
+    % which makes the whole thing look nice.
+    \anchorborder{%
+        \southwest \pgf@xa=\pgf@x \pgf@ya=\pgf@y%
+        \northeast \pgf@xb=\pgf@x \pgf@yb=\pgf@y%
+        \pgf@x=0.5\pgf@xa%
+        \advance\pgf@x by 0.5\pgf@xb%
+        \pgf@y=0.5\pgf@ya%
+        \advance\pgf@y by 0.5\pgf@yb%
+        \advance\pgf@y by 0.25pt%
+    }
+
+    \backgroundpath{
+        \southwest \pgf@xa=\pgf@x \pgf@ya=\pgf@y
+        \northeast \pgf@xb=\pgf@x \pgf@yb=\pgf@y
+        \pgfpathmoveto{\pgfpoint{\pgf@xa}{\pgf@ya}}
+        \pgfpathlineto{\pgfpoint{\pgf@xa}{\pgf@yb}}
+        \pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@yb+1pt}}
+        \pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@ya}}
+        \pgfpathclose
+    }
+}
+\makeatother

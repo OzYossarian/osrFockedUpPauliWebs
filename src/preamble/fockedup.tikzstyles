@@ -37,12 +37,15 @@
 \tikzstyle{left_text}=[anchor=west, tikzit shape=circle]
 \tikzstyle{vacuum}=[th gn, fill=white, scale=0.8]
 \tikzstyle{graphv}=[fill=white, draw=none, shape=circle, inner sep=0mm]
+\tikzstyle{squareNE}=[shape=squareNE, draw=black, fill=white, inner sep=0.5mm, minimum height=5mm, minimum width=4mm, font={\footnotesize}, tikzit shape=rectangle]
+\tikzstyle{dash_circ}=[shape=circle, draw=black, dashed, inner sep=0.7mm, minimum width=3mm, minimum height=3mm, tikzit fill={rgb,255: red,128; green,128; blue,128}]
 
 % Edge styles
 \tikzstyle{braceedge}=[-, decorate, decoration={brace, amplitude=2mm, raise=-1mm}]
 \tikzstyle{blue-edge}=[-, very thick, draw=blue]
 \tikzstyle{hadamard edge}=[-, dashed, draw=blue]
 \tikzstyle{dashed}=[-, dash pattern=on 0.8mm off 0.8mm]
+\tikzstyle{grey_dashed}=[-, draw=gray, dash pattern=on 0.8mm off 0.8mm]
 \tikzstyle{blue}=[-, draw=blue]
 \tikzstyle{thick}=[-, line width=1pt]
 \tikzstyle{dotsedge}=[-, dotted, decoration={brace, amplitude=2mm, raise=-1mm}]

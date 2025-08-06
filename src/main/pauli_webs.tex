@@ -1,23 +1,114 @@
-\section{Pauli webs}
-
-\begin{itemize}
-    \item Define Pauli webs for individual spiders.
-        \begin{itemize}
-            \item Get scalars right
-            \item Pick convention for whether position or momentum displacements are `inner' or `outer' gates.
-            \item Do webs for GKP spiders.
-        \end{itemize}
-    \item Define Pauli webs for diagrams with multiple spiders.
-\end{itemize}
+\section{Pauli webs}\label{sec:pauli-webs}
 
 Function $\chi_x : \mathbb{R} \to \mathbb{C}$ defined as $\chi_x(p) = e^{-i2\pi xp}$.
-Hence $\chi_0(p) = e^{-i2\pi \cdot 0 \cdot p} = 1$ is the constant function $1$.
-
+Note $\chi_0(p) = e^{-i2\pi \cdot 0 \cdot p} = 1$ is the constant function $1$.
+Indeed, the function $\chi_a(x) = e^{-i2\pi ax}$ is a constant function iff $a = 0$.
 No $n \in \mathbb{N}$ such that the Kronecker delta $\delta_n: \mathbb{N} \to \mathbb{C}$ is the constant function $1$.
 
 Throughout, we will use a dot/underline/something to denote that a variable is the single argument of a function.
 For example, if writing $e^{-i2\pi \dot{x}p}$, we mean the function $x \mapsto e^{-i2\pi xp}$.
 If instead we write $e^{-i2\pi x\dot{p}}$, we mean the function $p \mapsto e^{-i2\pi xp}$.
+
+\subsection{Defining Pauli webs}\label{subsec:defining-pauli-webs}
+
+\begin{definition}\label{defn:generators}
+    The \textbf{generators} of the Focked-up ZX-calculus are the three spiders:
+    \begin{equation}\label{eq:generators_spiders}
+        \tikzfig{generators_spiders}
+    \end{equation}
+    the multiplier and $W$-node:
+    \begin{equation}\label{eq:generators_mult_W_node}
+    \tikzfig{generators_mult_W_node}
+    \end{equation}
+    and the identity and swap maps:
+    \begin{equation}\label{eq:generators_id_swap}
+    \tikzfig{generators_id_swap}
+    \end{equation}
+    where $f, h: \mathbb{R} \to \mathbb{C}$, $g: \mathbb{N} \to \mathbb{C}$ and $r \in \mathbb{R}$.
+\end{definition}
+
+In what follows, it might help to temporarily think of the identity and swap maps as also having a node at their center:
+\begin{equation}\label{eq:generators_id_swap_explicit}
+    \tikzfig{generators_id_swap_explicit}
+\end{equation}
+
+Note that these are an overcomplete generating set; will discuss this shortly!
+Will draw a generic generator as an asymmetric box with some label $f$ and some number of input and output legs:
+\begin{equation}\label{eq:generic_generator}
+    \tikzfig{generator}
+\end{equation}
+
+\begin{definition}\label{defn:highlighting_generator}
+    A \textbf{highlighting} of a single generator is an assignment of a tuple $(a_j, b_j) \in \mathbb{R}^2$ to each of its input and output legs.
+    Graphically:
+    \begin{equation}\label{eq:highlighting_generator}
+        \tikzfig{highlighting_generator}
+    \end{equation}
+    Whenever one or both of $a_j, b_j$ are zero, we can omit the corresponding highlight from the diagram:
+    \begin{equation}\label{eq:highlighting_generator_0s_omitted}
+        \tikzfig{highlighting_generator_0s_omitted}
+    \end{equation}
+\end{definition}
+
+\begin{definition}\label{defn:pauli_web_generator}
+    A \textbf{Pauli web} on a single generator is a highlighting:
+    \begin{equation}\label{eq:pauli_web_generator_highlighting}
+        \tikzfig{highlighting_generator}
+    \end{equation}
+    satisfying:
+    \begin{equation}\label{eq:pauli_web_generator_condition}
+        \tikzfig{pauli_web_generator_condition}
+    \end{equation}
+\end{definition}
+
+\begin{definition}\label{defn:boundary_internal_edges}
+    We say an edge in any ZX-diagram is a \textbf{boundary edge} if it is an input or output of the overall diagram, else it's an \textbf{internal edge}.
+\end{definition}
+
+Potential gotchas here are the diagram consisting of just the identity map, and the diagram consisting of just the swap map.
+The former has two boundary edges, not one, and similarly the latter has four boundary edges, not two:
+\begin{equation}\label{eq:generators_id_swap_explicit_boundary_edges}
+    \tikzfig{generators_id_swap_explicit}
+\end{equation}
+
+\begin{definition}\label{defn:half_edges}
+    We declare that internal edges actually consist of two \textbf{half-edges}, while boundary edges are a single \textbf{half-edge}.
+\end{definition}
+
+\begin{definition}\label{defn:highlighting_general_diagram}
+    A \textbf{highlighting} of a general ZX-diagram is an assignment of a tuple in $\mathbb{R}^2$ to each half-edge.
+    Graphically:
+    \begin{equation}\label{eq:highlighting_general_diagram}
+        \tikzfig{highlighting_general_diagram}
+    \end{equation}
+    Again, whenever one or both components of the tuple are zero, we may omit the corresponding highlight.
+\end{definition}
+
+\begin{definition}\label{defn:pauli_web_general_diagram}
+    A \textbf{Pauli web} on a general ZX-diagram is a highlighting:
+    \begin{equation}\label{eq:pauli_web_general_diagram_highlighting}
+        \tikzfig{highlighting_general_diagram}
+    \end{equation}
+    such the restriction to each generator and its incident half-edges is a Pauli web for that generator, and on every internal edge the pair of tuples $(a, b)$ and $(c, d)$ satisfy $c = -a$ and $d = -b$:
+    \begin{equation}\label{eq:pauli_web_general_diagram_conditions}
+        \tikzfig{pauli_web_general_diagram}
+    \end{equation}
+\end{definition}
+
+TODO: what to say about Pauli webs being somehow preserved under rewrites?
+i.e.\ suppose there's a Pauli web on a diagram $D$ with boundary edges labelled $(a_j, b_j)$.
+If $D = D'$ for some other diagram $D$, then there should be a valid Pauli web on $D'$ with the same boundary edge labels.
+This is a generalisation of my initial concern which was about consistency of these two definitions given that our set of generators is overcomplete - e.g.:
+\begin{equation}\label{eq:red_spider_derived}
+    \tikzfig{red_spider_derived}
+\end{equation}
+
+TODO: add intuition/explanations throughout all this
+
+TODO: can we get away with just using one label $(a, b)$ for each internal edge?
+Was thinking no - counterexample being two generators connected by a cup or cap.
+
+\subsection{Determining Pauli webs}\label{subsec:determining-pauli-webs}
 
 Will use shorthand:
 \begin{equation}\label{eq:mult_default}
@@ -37,7 +128,6 @@ Hence:
 \begin{equation}\label{eq:mult_default_with_fourier}
     \tikzfig{mult_default_with_fourier}
 \end{equation}
-
 
 \begin{lemma}\label{lem:gate_absorb}
     \begin{equation}\label{eq:gate_absorb}
@@ -78,16 +168,16 @@ Hence:
 \end{lemma}
 
 \begin{lemma}\label{lem:gate_copy}
-    \begin{equation}\label{eq:gate_copy}
-        \tikzfig{red_gate_copy}
-        \qqqqquad
-        \tikzfig{green_gate_copy}
+\begin{equation}\label{eq:gate_copy}
+\tikzfig{red_gate_copy}
+\qqqqquad
+\tikzfig{green_gate_copy}
+\end{equation}
+\begin{proof}
+    \begin{equation}\label{eq:red_gate_copy_proof}
+        \tikzfig{red_gate_copy_proof}
     \end{equation}
-    \begin{proof}
-        \begin{equation}\label{eq:red_gate_copy_proof}
-            \tikzfig{red_gate_copy_proof}
-        \end{equation}
-    \end{proof}
+\end{proof}
 \end{lemma}
 
 \begin{lemma}\label{lem:red_gate_copy_multi_inputs}
@@ -96,31 +186,14 @@ Hence:
     \end{equation}
 \end{lemma}
 
-\begin{lemma}\label{lem:chi_constant_iff}
-    The function $\chi_a(x) = e^{-i2\pi ax}$ is a constant function iff $a = 0$, in which case it's the constant function $1$.
-\end{lemma}
-
 \begin{lemma}\label{lem:red_gate_copy_cancel}
     \begin{equation}\label{eq:red_gate_copy_cancel}
         \tikzfig{red_gate_copy_cancel}
     \end{equation}
 \end{lemma}
 
-%TODO - maybe replace spiders in the middle with very generic diagram boxes?
-TODO - change this - in OG paper the generators are the $Z$ and Fock spiders, so maybe stick to that here?
-And give the red spider webs as a special case of webs on diagrams with multiple spiders?
-\begin{definition}[Pauli web on a single $Z$ or $X$ spider]\label{defn:pauli_webs}
-    \begin{equation}\label{eq:general_pauli_web_green_spider}
-        \tikzfig{general_pauli_web_green_spider}
-    \end{equation}
-    \vspace{20pt}
-    \begin{equation}\label{eq:general_pauli_web_red_spider}
-        \tikzfig{general_pauli_web_red_spider}
-    \end{equation}
-\end{definition}
-
 \begin{proposition}\label{thm:general_pauli_web_green_gaussian_spider}
-    A highlighting of edges around a Gaussian $Z$ spider with phase function $e^{i(t + u\isarg{x} + v\isarg{x}^2)}$ is a Pauli web iff it's of the following form, where $2\pi \sum_j a_j = 2vb$:
+    A highlighting of a Gaussian $Z$ spider with phase function $e^{i(t + u\isarg{x} + v\isarg{x}^2)}$ is a Pauli web iff it's of the following form, where $2\pi \sum_j a_j = 2vb$:
     \begin{equation}\label{eq:general_pauli_web_green_linear_spider}
         \tikzfig{general_pauli_web_green_gaussian_spider}
     \end{equation}
@@ -142,11 +215,11 @@ And give the red spider webs as a special case of webs on diagrams with multiple
 We will also use the shorthand $x \eqmod{r} y$ to mean $x = y$ mod $r$.
 
 \begin{proposition}\label{thm:general_pauli_web_green_gkp_like_spider}
-A highlighting of edges around a $Z$ spider with phase function $\llbracket \isarg{x} \eqmod{r} 0 \rrbracket$ is a Pauli web iff it's of the following form, where $b \eqmod{r} 0$ and $r \sum_j a_j \eqmod{1} 0$:
-\begin{equation}\label{eq:general_pauli_web_green_gkp_like_spider}
-    \tikzfig{general_pauli_web_green_gkp_like_spider}
-\end{equation}
-\begin{proof}
-    TODO
-\end{proof}
+    A highlighting of a $Z$ spider with phase function $\llbracket \isarg{x} \eqmod{r} 0 \rrbracket$ is a Pauli web iff it's of the following form, where $b \eqmod{r} 0$ and $r \sum_j a_j \eqmod{1} 0$:
+    \begin{equation}\label{eq:general_pauli_web_green_gkp_like_spider}
+        \tikzfig{general_pauli_web_green_gkp_like_spider}
+    \end{equation}
+    \begin{proof}
+        TODO
+    \end{proof}
 \end{proposition}
